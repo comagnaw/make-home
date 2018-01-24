@@ -5,7 +5,7 @@ export GOPATH=${HOME}/repos
 BUILD_DIR=${GOPATH}/
 ME_DIR=${GH_HOST}/comagnaw
 DEP=${BUILD_DIR}/src
-GHE_DEP=${DEP}/${GHE_HOST}
+GH_DEP=${DEP}/${GH_HOST}
 
 .PHONY: *
 
