@@ -22,11 +22,11 @@ get:
 finish:
 	@if [ ! -L ${HOME}/home ] ; \
 		then \
-		ln -s ${BUILD_DIR}src/${ME_DIR}/home_stuff ${HOME}/home ; \
+		ln -s ${BUILD_DIR}src/${ME_DIR}/home-stuff ${HOME}/home ; \
 	fi ;
 	@if [ ! -L ${HOME}/vagrantFiles ] ; \
 		then \
-		ln -s ${BUILD_DIR}src/${ME_DIR}/home_osx/vagrantFiles ${HOME}/vagrantFiles ; \
+		ln -s ${BUILD_DIR}src/${ME_DIR}/home-stuff/vagrantFiles ${HOME}/vagrantFiles ; \
 	fi ;
 	@${HOME}/home/bin/sync_home.sh
     
