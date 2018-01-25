@@ -4,7 +4,7 @@
 SHELL=/bin/bash
 ROOT := $(shell pwd)
 GH_HOST := github.com
-# GHE_HOST := github-enterprise-server.com
+GHE_HOST := github-enterprise-server.com
 
 # SSH clones over the VPN get killed by some kind of DOS protection run amook
 # set clone_delay to add a delay between each git clone/fetch to work around that
@@ -20,7 +20,7 @@ define gitclone
 	@echo "Checking/Updating dependency $(2)"
 	@if [ -d $(3) ]; then cd $(3) && git fetch origin; fi			                                        # update from remote if we've already cloned it
 	@if [ ! -d $(3) ] && [ $(1) == ${GHE_HOST} ]; then git clone -q -n git@$(1):$(2) $(3); fi	            # clone a new copy from GHE
-	@if [ ! -d $(3) ] && [ $(1) != ${GHE_HOST} ]; then git clone -q -n https://$(1)/$(2).git $(3); fi	# clone a new copy from other sources
+	@if [ ! -d $(3) ] && [ $(1) != ${GHE_HOST} ]; then git clone -q -n git@$(1):$(2) $(3); fi	# clone a new copy from other sources
 	@cd $(3) && git checkout -q $(4)								                                        # checkout out specific commit
 	@sleep ${CLONE_DELAY}
 endef
