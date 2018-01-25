@@ -28,5 +28,5 @@ finish:
 		then \
 		ln -s ${BUILD_DIR}/src/${ME_DIR}/home-stuff/vagrantFiles ${HOME}/vagrantFiles ; \
 	fi ;
-	@${HOME}/home/bin/sync_home.sh
+	@${HOME}/home/bin/sync2home.sh
     
