@@ -69,7 +69,30 @@ $ cat .gitconfig_include
         gpgsign = true
 ```
 
+## Set-up Python
+
+```
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+brew install python
+
+ln -s /usr/local/bin/python2 /usr/local/bin/python
+ln -s /usr/local/bin/pip2 /usr/local/bin/pip
+
+pip install --upgrade pip setuptools
+
+pip install virtualenv
+
+mkdir ~/.pyenvs
+mkdir ~/repos/pyprojects
+
+pip install virtualenvwrapper
+
+pip install ptpython
+```
+
 ## Set-up Powerline Shell
+The bashrc references powerline-shell for formatting `$PS1`.  The below steps need to be done to install powerline-shell and the supported fonts.
 
 ```
 pip install powerline-shell
@@ -85,3 +108,5 @@ cd fonts
 cd ..
 rm -rf fonts
 ```
+
+Update iterm2 Profile to use *12pt Roboto Mono for Powerline*
