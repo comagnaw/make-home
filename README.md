@@ -110,3 +110,9 @@ rm -rf fonts
 ```
 
 Update iterm2 Profile to use *12pt Roboto Mono for Powerline*
+
+## Set-up brew update checks and notifications
+
+```
+brew install terminal-notifier
+```
