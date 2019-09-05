@@ -36,6 +36,7 @@ mkdir ~/.gnupg
 echo "pinentry-program /usr/local/bin/pinentry-mac" >> ~/.gnupg/gpg-agent.conf
 ```
 
+
 2. Create GPG key.
 
 https://help.github.com/articles/generating-a-new-gpg-key/
