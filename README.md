@@ -32,6 +32,7 @@ brew install pinentry-mac
 #
 # Set-up gpg-agent to point to pinentry-mac
 #
+mkdir ~/.gnupg
 echo "pinentry-program /usr/local/bin/pinentry-mac" >> ~/.gnupg/gpg-agent.conf
 ```
 
