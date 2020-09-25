@@ -1,0 +1,9 @@
+gnupg
+pinentry-mac
+python
+go
+powerline-go
+pyenv
+pyenv-virtualenv
+pyenv-virtualenvwrapper
+terminal-notifier

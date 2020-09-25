@@ -8,40 +8,18 @@ Download make-home repo, which contains Makefile to set-up team repos and sync h
 cd ~
 git clone git@github.com:comagnaw/make-home.git
 cd make-home
-make prep
-make get
-make finish
+make
 ```
 
 ## Set-up GPGv2 for signed git commits
 
-The previous section created ~/.gitconfig and ~/.gitconfig_include files.  These files will need to be upated after running GPG setup.  The following steps require brew to be installed.
+The previous section created files ~/.gnupg/gpg-agent.conf, ~/.gitconfig, ~/.gitconfig_include files and installed gnupg and pinetnry-mac.  The .gitconfig* files will need to be upated after running the following steps.
 
-1. Install GPGv2 and pinentry-mac
-```
-#
-# This will most likely install gnupg v2 (This is recommended version).
-#
-brew install gnupg 
-
-#
-# This is required to interact with MacOSX keychain.
-#
-brew install pinentry-mac
-
-#
-# Set-up gpg-agent to point to pinentry-mac
-#
-mkdir ~/.gnupg
-echo "pinentry-program /usr/local/bin/pinentry-mac" >> ~/.gnupg/gpg-agent.conf
-```
-
-
-2. Create GPG key.
+1. Create GPG key.
 
 https://help.github.com/articles/generating-a-new-gpg-key/
 
-3. Register GPG key with git account.
+2. Register GPG key with git account.
 
 https://help.github.com/articles/adding-a-new-gpg-key-to-your-github-account/
 
@@ -49,8 +27,8 @@ https://help.github.com/articles/adding-a-new-gpg-key-to-your-github-account/
 
 The following command will need to be run to obtain the required key for the ~/.gitconfig_include file.  The string *B295FD1* is the string required.
 
-```
-$gpg --list-keys --keyid-format SHORT
+```bash
+$ gpg --list-keys --keyid-format SHORT
 
 /Users/llyodbraun/.gnupg/pubring.kbx
 ---------------------------------
@@ -62,7 +40,7 @@ sub   rsa4096/922B4DE3 2018-01-22 [E]
 
 The signingkey value should be upated in ~/.gitconfig_include
 
-```
+```bash
 $ cat .gitconfig_include
 
 [user]
@@ -71,50 +49,31 @@ $ cat .gitconfig_include
         gpgsign = true
 ```
 
-## Set-up Python
+## Set-up Python 
 
-```
-ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+Development for python should use pyenv to ensure cross version dependencies do not cause a conflict against the base python installation.  Reference great write-up here: https://alysivji.github.io/setting-up-pyenv-virtualenvwrapper.html
 
-brew install python
+```bash
+# Get list of python version available.
+pyenv install --list
 
-ln -s /usr/local/bin/python2 /usr/local/bin/python
-ln -s /usr/local/bin/pip2 /usr/local/bin/pip
+# Install version for use in pyenv
+pyenv install 2.7.15
 
-pip install --upgrade pip setuptools
+# Activate python verison
+pyenv shell [version]
 
-pip install virtualenv
+# Init virutalenv on against version (only needed when first installing version)
+pyenv virtualenvwrapper_lazy
 
-mkdir ~/.pyenvs
-mkdir ~/repos/pyprojects
+# Make a virtualenv in version
+mkvirtualenv [name]
 
-pip install virtualenvwrapper
-
-pip install ptpython
 ```
 
 ## Set-up Powerline Shell
 The bashrc references powerline-shell for formatting `$PS1`.  The below steps need to be done to install powerline-shell and the supported fonts.
 
-```
-pip install powerline-shell
-```
-
-```
-# clone
-git clone https://github.com/powerline/fonts.git --depth=1
-# install
-cd fonts
-./install.sh
-# clean-up a bit
-cd ..
-rm -rf fonts
-```
-
 Update iterm2 Profile to use *12pt Roboto Mono for Powerline*
 
 ## Set-up brew update checks and notifications
-
-```
-brew install terminal-notifier
-```
