@@ -2,7 +2,7 @@
 
 ## Download and run make
 
-Depending on how new your Mac is, you may need to install xcode tools prior to being able to use git.  Perform the following to install tools (e.g. git, make gcc)
+Depending on how new your Mac is, you may need to install xcode tools prior to being able to use git.  Perform the following to install tools (e.g. git, make gcc).  _Note:_ Apple has updated xcode licensing so you may need to sign-in to download from: https://developer.apple.com/download/more/?name=for%20Xcode
 
 ```bash
 xcode-select --install
@@ -80,6 +80,6 @@ mkvirtualenv [name]
 ## Set-up Powerline Shell
 The bashrc references powerline-shell for formatting `$PS1`.  The below steps need to be done to install powerline-shell and the supported fonts.
 
-Update iterm2 Profile to use *12pt Roboto Mono for Powerline*
+Update iterm2 Profile to use *Hack Nerd Font Mono*
 
 ## Set-up brew update checks and notifications

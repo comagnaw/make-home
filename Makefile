@@ -34,6 +34,6 @@ finish:
 	scripts/install-homebrew.sh
 	scripts/install-formulas.sh
 	scripts/install-fonts.sh
-	scripts/install-golang.sh
-	scripts/install-pinentry.sh
+	scripts/setup-golang.sh
+	scripts/setup-pinentry.sh
     
