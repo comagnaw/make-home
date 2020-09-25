@@ -2,9 +2,15 @@
 
 ## Download and run make
 
+Depending on how new your Mac is, you may need to install xcode tools prior to being able to use git.  Perform the following to install tools (e.g. git, make gcc)
+
+```bash
+xcode-select --install
+```
+
 Download make-home repo, which contains Makefile to set-up team repos and sync home
 
-```
+```bash
 cd ~
 git clone git@github.com:comagnaw/make-home.git
 cd make-home
