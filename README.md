@@ -50,14 +50,14 @@ The signingkey value should be upated in ~/.gitconfig_include
 $ cat .gitconfig_include
 
 [user]
-	signingkey = 3B295FD1
+      signingkey = 3B295FD1
 [commit]
         gpgsign = true
 ```
 
 ## Set-up Python 
 
-Development for python should use pyenv to ensure cross version dependencies do not cause a conflict against the base python installation.  Reference great write-up here: https://alysivji.github.io/setting-up-pyenv-virtualenvwrapper.html
+Development for python should use pyenv to ensure cross version dependencies do not cause a conflict against the base python installation.  For more information referecne this [great write-up](https://alysivji.github.io/setting-up-pyenv-virtualenvwrapper.html)
 
 ```bash
 # Get list of python version available.
@@ -74,12 +74,23 @@ pyenv virtualenvwrapper_lazy
 
 # Make a virtualenv in version
 mkvirtualenv [name]
-
 ```
 
 ## Set-up Powerline Shell
-The bashrc references powerline-shell for formatting `$PS1`.  The below steps need to be done to install powerline-shell and the supported fonts.
 
-Update iterm2 Profile to use *Hack Nerd Font Mono*
+The bashrc references powerline-shell for formatting `$PS1`.  The default fonts do not include special fonts used in the `patched` version of powerline and you must update the iterm2 profile to use Update iterm2 Profile to use *Hack Nerd Font Mono*.
 
 ## Set-up brew update checks and notifications
+
+A plist file should be in the `~/Library/LaunchAgents/` which will run twice daily and notify the logged in user of any homebrew formula updates.  Check to ensure it was added into the launchd instance by the `setup-launchagent.sh`:
+
+```bash
+launchctl list | grep homebrew
+-     0     homebrew.simonsimcity.update-notifier
+```
+
+You can manually add it using the following command:
+
+```bash
+launchctl load ~/Library/LaunchAgents/homebrew.simonsimcity.update-notifier.plist
+```
