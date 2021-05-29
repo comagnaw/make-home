@@ -76,9 +76,9 @@ pyenv virtualenvwrapper_lazy
 mkvirtualenv [name]
 ```
 
-## Set-up Powerline Shell
+## Set-up ZSH Shell
 
-The bashrc references powerline-shell for formatting `$PS1`.  The default fonts do not include special fonts used in the `patched` version of powerline and you must update the iterm2 profile to use Update iterm2 Profile to use *Hack Nerd Font Mono*.
+The zshrc references spaceship_prompt theme for formatting `$PS1`.  The default fonts do not include special fonts used in the version of spaceship and you must update the iterm2 profile to use Update iterm2 Profile to use *Hack Nerd Font Mono*.
 
 ## Set-up brew update checks and notifications
 
