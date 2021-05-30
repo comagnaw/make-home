@@ -29,12 +29,12 @@ finish:
 		ln -s ${BUILD_DIR}/src/${ME_DIR}/home-stuff/vagrantFiles ${HOME}/vagrantFiles ; \
 	fi ;
 	
+	@${HOME}/home/bin/sync2home.sh git_include
+
 	scripts/install-homebrew.sh
 	scripts/install-formulas.sh
 	scripts/install-fonts.sh
 	scripts/setup-golang.sh
 	scripts/setup-pinentry.sh
 	scripts/install-ohmyzsh.sh
-
-	@${HOME}/home/bin/sync2home.sh git_include
     
