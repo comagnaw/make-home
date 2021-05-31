@@ -78,7 +78,7 @@ mkvirtualenv [name]
 
 ## Set-up ZSH Shell
 
-The zshrc references spaceship_prompt theme for formatting `$PS1`.  The default fonts do not include special fonts used in the version of spaceship and you must update the iterm2 profile to use Update iterm2 Profile to use *Hack Nerd Font Mono*.
+The zshrc references `spaceship_prompt` theme for formatting `$PS1`.  The default fonts do not include special fonts used in the version of spaceship and you must update the iterm2 profile to use. Update iterm2 Profile to use a font with *Powerline* in the name (e.g. Roboto Mono for Powerline).  The `scripts/install-fonts.sh` should have installed the Fonts in `~/Library/Fonts` on Mac OSX.
 
 ## Set-up brew update checks and notifications
 
