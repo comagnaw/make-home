@@ -75,22 +75,20 @@ Host github.com
   IdentityFile ~/.ssh/${ME}_id_ed25519
   IdentitiesOnly yes
 
-Host backup0.home
-  AddKeysToAgent yes
-  IdentityFile ~/.ssh/local_rsa
-
 Host *
   AddKeysToAgent yes
   UseKeychain yes
-  IdentityFile ~/.ssh/local_rsa
+  IdentityFile ~/.ssh/local_id_ed25519
   ServerAliveInterval 30
 EOT
     fi
 
-    ssh-keygen -t ed25519 -C "${ME}@gmail.com"  -f ${sshPath}/${ME}_id_ed25519
+    ssh-keygen -t ed25519 -C "${ME}@gmail.com" -f ${sshPath}/${ME}_id_ed25519
+    ssh-keygen -t ed25519 -C "${USER}@${HOST}" -f ${sshPath}/local_id_ed25519
 
     eval "$(ssh-agent -s)"
     ssh-add --apple-use-keychain ${sshPath}/${ME}_id_ed25519
+    ssh-add --apple-use-keychain ${sshPath}/local_id_ed25519
 
 }
 

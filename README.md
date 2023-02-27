@@ -86,7 +86,7 @@ mkvirtualenv [name]
 
 ## iTerm2 Preferences
 
-The iTerm2 preferences should be updated to point to a `${HOME}/repos/src/git.soma.salesforce.com/msieger/home_osx/iterm2`.  This can be done by opening iterm, performing `<command> ,`, select General > Preferences, and selecting `Load preferences from a custom folder or URL`.  Browse to the above folder location to load the preferences.
+The iTerm2 preferences should be updated to point to a `${HOME}/repos/src/github.com/comagnaw/home-stuff/iterm2`.  This can be done by opening iterm, performing `<command> ,`, select General > Preferences, and selecting `Load preferences from a custom folder or URL`.  Browse to the above folder location to load the preferences.
 
 ## Set-up brew update checks and notifications
 
